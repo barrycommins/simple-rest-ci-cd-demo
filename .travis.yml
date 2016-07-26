@@ -12,6 +12,7 @@ addons:
     project:
       name: "barrycommins/simple-rest-ci-cd-demo"
       description: "Build submitted via Travis CI"
+    notification_email: builds@barrycommins.com
     build_command_prepend: "mvn clean"
     build_command:   "mvn test verify"
     branch_pattern: coverity_scan
