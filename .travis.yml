@@ -1,7 +1,9 @@
 language: java
 jdk: oraclejdk8
 script:
-  - if [ "${COVERITY_SCAN_BRANCH}" != 1 ]; then mvn test verify ; fi
+  - if [ "${COVERITY_SCAN_BRANCH}" != 1 ]; then mvn test ; fi
+after_success:
+- mvn clean verify coveralls:report
 notifications:
   email: false
 env:
