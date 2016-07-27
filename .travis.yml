@@ -1,7 +1,7 @@
 language: java
 jdk: oraclejdk8
 before_install:
-  - wget -0 codacy-coverage-reporter.jar http://central.maven.org/maven2/com/codacy/codacy-coverage-reporter/1.0.10/codacy-coverage-reporter-1.0.10-assembly.jar
+  - wget -O codacy-coverage-reporter.jar http://central.maven.org/maven2/com/codacy/codacy-coverage-reporter/1.0.10/codacy-coverage-reporter-1.0.10-assembly.jar
 script:
   - if [ "${COVERITY_SCAN_BRANCH}" != 1 ]; then mvn test ; fi
 after_success:
