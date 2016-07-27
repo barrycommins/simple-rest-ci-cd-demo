@@ -1,5 +1,6 @@
 language: java
 jdk: oraclejdk8
+edge: true
 before_install:
 - wget -O codacy-coverage-reporter.jar http://central.maven.org/maven2/com/codacy/codacy-coverage-reporter/1.0.10/codacy-coverage-reporter-1.0.10-assembly.jar
 script:
@@ -23,3 +24,14 @@ addons:
     build_command_prepend: mvn clean
     build_command: mvn test verify
     branch_pattern: master
+deploy:
+  provider: cloudfoundry
+  api: https://api.run.pivotal.io
+  username:
+    secure: iNnDBBYrgEMhOLxObQFKitoX7iTRFocfJQ7YENekxXnSScdT3YGCaJVidEewEorcTTPgknAWVRtwHfhZYDDL3ReZpfkViRIDpHb49qjOpHYTF9mI+9D8Gsz6VOePX/hlwnurSz5Kipiepbj/G2V/MIParU5rQ1nc1/sLT6UDYiAROXcGS6tGDzl7/+oO1AOk9rgT+GwhXWYLYR9bwf11fD+fuA9XRA5bgo62kjENGjSXDiD3DRvRvlwhgHusGdZcYCOnEd+gUVeXc229Mc/9ie5+5m/ciXMeBa0HCFKrfiGW0nUnCaxO924+JuMrC0N8qXTGqFlP/tgn2xJr7nH6FLFoesPJ/ayC1AJMP0k+uASN0Um1xLpswWeHIDqhpoNkVIJKdrr2xBCSJSNJ6HpkX0qvjxN/9/vkQ8+eXiGFrf9h6ifWeiToQ8HeqphBuRtMh+2rLiqzGYffMU5XxdSwqlE/Q70fZkcBGKRRaWE7YWuGwUzyFMiSZzpTTtQFltLDqzwbFxv9OTEPp46vV8x373fYQ+l0tTvkpvXprNQBaPZZnjPHBpj+PwFZjdGmWEPm12JhN421wpZOg2u3JKd+bwJ7sROBQwFTcmqJOyZ2gj3guOXqhc0QoQ/VY53PwIePgnMPIGMVH3K6/XLQa7+6f4kOWidBK8qvZR+f1br5j/w=
+  password:
+    secure: gWDuZ60kC/fLNKyERH4kylbn1ofdBVe4K3a2n7z05jcasKXkGIAkOh93x7tPCjv/YUJYeA2Tp1aZh342TyH0rFk35W74tYjdA9DO7AkxvZPM4HnNFB46gAYreehCDp5dN//iml75pAqu5t1IY/H+WQGi9wWKbexd5AjCp4g11QsK+cpykxti0NNh68gnw6wPJgp8SBhtncdx2RVvUwh34+Ghh4A/xicdB2w8I8bPglhrEc+7O3vKPOGhDP7R93MffhB4erNNkL0u3iR0ozeTpTPekd8hKZIFxJFz95yRpiMA5jTecJ1X7nDDMk2CNir/O/8t+XlbAn3yDbJeBHkbuGRluDnxCAMWeurRpsPPQ2k2nK0yR7M5QEVzATyFvu1eN8IhpwViFpX9csRiz9/dxq+jhAKmqvdFOZGvH2YzSkU3gN7qvn7KnSzVeBHJvqdcyrUxPHd8EHh31bfqBuOe/KCRinypDbGJGpnQayDvvsu5rCbFrjfkES2hJ19+HB4PJHSN/zkpIu6yt0GzpxRAbnQOaJRqekSeg6URY/oL1u8FHs0YOsedIrnT10htPWEc+h4R4wz5hJIcxbM6iYRh/OBQCho+WOuuRLcf6yFUFFD1gE+M6hUWb53v/SMPjE405C7PrD4vIe1z0ne7ZyPrUe/fHPZsRzUYORLuLmaQrxk=
+  organization: barrycommins-org
+  space: development
+  on:
+    repo: barrycommins/simple-rest-ci-cd-demo
