@@ -3,3 +3,4 @@ applications:
 - name: simple-rest-ci-cd-demo
   memory: 512M
   host: simple-rest
+  path: target/simple-rest-ci-cd-demo.jar

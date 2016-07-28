@@ -4,9 +4,8 @@ edge: true
 before_install:
 - wget -O codacy-coverage-reporter.jar http://central.maven.org/maven2/com/codacy/codacy-coverage-reporter/1.0.10/codacy-coverage-reporter-1.0.10-assembly.jar
 script:
-- if [ "${COVERITY_SCAN_BRANCH}" != 1 ]; then mvn test ; fi
+- if [ "${COVERITY_SCAN_BRANCH}" != 1 ]; then mvn verify ; fi
 after_success:
-- mvn clean verify
 - java -jar codacy-coverage-reporter.jar -l Java -r ./target/site/jacoco/jacoco.xml
 - mvn coveralls:report
 notifications:
@@ -22,8 +21,8 @@ addons:
       description: Build submitted via Travis CI
     notification_email: builds@barrycommins.com
     build_command_prepend: mvn clean
-    build_command: mvn test verify
-    branch_pattern: master
+    build_command: mvn verify
+    branch_pattern: coverity-scan
 deploy:
   provider: cloudfoundry
   api: https://api.run.pivotal.io
