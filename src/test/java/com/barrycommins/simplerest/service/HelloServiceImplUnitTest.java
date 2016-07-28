@@ -6,11 +6,9 @@ import org.junit.Test;
 
 public class HelloServiceImplUnitTest {
     
-    private HelloService helloService = new HelloServiceImpl();
-    
-
     @Test
     public void test() {
+        HelloService helloService = new HelloServiceImpl();
         assertEquals("Hello", helloService.greeting());
     }
 
