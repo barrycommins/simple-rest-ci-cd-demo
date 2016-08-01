@@ -20,11 +20,10 @@ public class RestIT {
 
 	@Test
 	public void testGreeting() {
-	    
 	    TestRestTemplate restTemplate = new TestRestTemplate();
 	    
 	    String response = restTemplate.getForObject("http://localhost:"+serverPort+"/hello?name=test", String.class);
-	    assertEquals("Hello, test", response);
+        assertEquals("Hello, test", response);
 	}
 
 }

@@ -11,15 +11,16 @@ import com.barrycommins.simplerest.service.HelloService;
 @RestController("/hello")
 public class HelloController {
     
-    private HelloService helloService;
-    
+    private final HelloService helloService;
+
     @Autowired
     public HelloController(HelloService helloService) {
         this.helloService = helloService;
     }
-    
+
     @RequestMapping
-    public String getGreeting(@RequestParam(name="name", required=true) String name) {
+    public String getGreeting(@RequestParam(name="name") String name) {
+
         return helloService.greeting() + ", " + name;
     }
 

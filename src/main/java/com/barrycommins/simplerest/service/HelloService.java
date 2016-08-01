@@ -3,7 +3,7 @@ package com.barrycommins.simplerest.service;
 public interface HelloService {
     /**
      * Get a greeting
-     * @return
+     * @return a greeting
      */
     String greeting();
 }
