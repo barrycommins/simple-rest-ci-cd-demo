@@ -1,13 +1,12 @@
 package com.barrycommins.simplerest.controller;
 
-import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
-
+import com.barrycommins.simplerest.service.HelloService;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.barrycommins.simplerest.service.HelloService;
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 public class HelloControllerUnitTest {
     
