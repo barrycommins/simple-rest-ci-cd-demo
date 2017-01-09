@@ -2,4 +2,12 @@
 
 Example code to demonstrate a simple rest service using CI/CD
 
-Work in progress
+Uses open source tools to build, test, analyse and deploy a simple service:
+
+TravisCI for builds
+Codacy for code quality
+Coverity for static analysis
+Coveralls for code coverage
+
+and finally automatically deploys to 
+Pivotal Cloud Foundry
